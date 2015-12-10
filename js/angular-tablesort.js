@@ -21,6 +21,7 @@ tableSortModule.directive('tsWrapper', ['$log', '$parse', function( $log, $parse
             this.setSortField = function( sortexpr, element ) {
                 var i;
                 var expr = parse_sortexpr( sortexpr );
+                expr.push(sortexpr);
                 if( $scope.sortExpression.length === 1
                     && $scope.sortExpression[0][0] === expr[0] ) {
                     if( $scope.sortExpression[0][2] ) {
