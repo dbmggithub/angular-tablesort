@@ -50,6 +50,7 @@ tableSortModule.directive('tsWrapper', ['$log', '$parse', function( $log, $parse
                 var i;
                 var toggle_order = false;
                 var expr = parse_sortexpr( sortexpr );
+                expr.push(sortexpr);
                 for( i=0; i<$scope.sortExpression.length; i=i+1 ) {
                     if( $scope.sortExpression[i][0] === expr[0] ) {
                         if( $scope.sortExpression[i][2] ) {
