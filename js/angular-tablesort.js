@@ -145,9 +145,12 @@ tableSortModule.directive('tsCriteria', function() {
             };
             element.bind('click', clickingCallback);
             element.addClass('tablesort-sortable');
-            if( "tsDefault" in attrs && attrs.tsDefault !== "0" ) {
+            //if( "tsDefault" in attrs && attrs.tsDefault !== "0" ) {
+            var tsDefault = element.attr('ts-default');
+            if ( tsDefault && (tsDefault !== "0") ) {
                 tsWrapperCtrl.addSortField( attrs.tsCriteria, element );
-                if( attrs.tsDefault == "descending" ) {
+                //if( attrs.tsDefault == "descending" ) {
+                if( tsDefault == "descending" ) {
                     tsWrapperCtrl.addSortField( attrs.tsCriteria, element );
                 }
             }
